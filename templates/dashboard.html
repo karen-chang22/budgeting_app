@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="dashboard-all" style="margin-top:0; padding-top:0;">
+    <title>Dashboard - Path2Save</title>
+    <h1>Welcome back, {{ email }} 👋</h1>
+    <h2>📅 Today is {{ today }}</h2>
+
+    <div class="summary">
+        <h3>This Month's Summary</h3>
+        <p>💵 Income: ${{ income }}</p>
+        <p>💸 Expenses: ${{ expense }}</p>
+    </div>
+
+    <div class="buttons">
+        <a href="/transactions">💼 Transactions</a>
+        <a href="/goals">🎯 Add Goal</a>
+        <a href="/ai">🤖 AI Suggestions</a>
+        <a href="/logout">🚪 Logout</a>
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard - Path2Save</title>
+    <!-- internal styling -->
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        background-color: #f5f5f5;
+    }
+
+    h1,
+    h2 {
+        color: #2c3e50;
+    }
+
+    .summary {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        width: 400px;
+    }
+
+    .buttons {
+        margin-top: 30px;
+    }
+
+    .buttons a {
+        display: inline-block;
+        margin-right: 15px;
+        padding: 10px 18px;
+        background-color: #3498db;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .buttons a:hover {
+        background-color: #2980b9;
+    }
+</style>
+</head>
+
+<body>
+    <h1>Welcome back, {{ email }} 👋</h1>
+    <h2>📅 Today is {{ today }}</h2>
+
+    <div class="summary">
+        <h3>This Month's Summary</h3>
+        <p>💵 Income: ${{ income }}</p>
+        <p>💸 Expenses: ${{ expense }}</p>
+    </div>
+
+    <div class="buttons">
+        <a href="/transactions">💼 Transactions</a>
+        <a href="/goals">🎯 Add Goal</a>
+        <a href="/ai">🤖 AI Suggestions</a>
+        <a href="/logout">🚪 Logout</a>
+    </div>
+</body>
+
+</html> -->

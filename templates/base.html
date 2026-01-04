@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Path2Save{% endblock %}</title>
+
+  <!-- Google Font / Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+{% if session.get('email') and request.path != '/' and request.path != '/register' and request.path != '/login'%}
+  <div class="nav-icons">
+    <a href="{{ url_for('dashboard') }}" title="Dashboard">
+      <i class="fa-solid fa-house"></i>
+    </a>
+    <a href="{{ url_for('transactions') }}" title="Transactions">
+      <i class="fa-solid fa-money-bill-transfer"></i>
+    </a>
+    <a href="{{ url_for('goals') }}" title="Goals">
+      <i class="fa-solid fa-bullseye"></i>
+    </a>
+    <a href="{{ url_for('ai_suggestions') }}" title="AI">
+      <i class="fa-solid fa-robot"></i>
+    </a>
+  </div>
+{% endif %}
+
+<div class="{% block container_class %}container{% endblock %}">
+    {% block content %}{% endblock %}
+</div>
+</body>
+
+</html>

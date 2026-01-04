@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Budgeting Assistant</h1>
+
+  <!-- Static Suggestions -->
+  <ul style="list-style: none; font-size: 1.2rem;">
+    {% for generalTip in suggestions %}
+      <li>{{ generalTip }}</li>
+    {% endfor %}
+  </ul>
+
+  <p style="font-size: 0.95rem; line-height: 1.2;"> 
+    Sorry, our AI assistant is currently unavailable T.T </p>
+
+{% endblock %}

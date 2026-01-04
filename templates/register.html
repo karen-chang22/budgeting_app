@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Rigerster - Path2Save{% endblock %}
+{% block content %}
+<h1>Register 📝</h1>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul class="flashes">
+    {% for message in messages %}
+    <li style="color: red;">{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+{% if message %}
+<p style="color: red;">{{ message }}</p>
+{% endif %}
+<form action="/register" method="POST">
+    <label>Email:</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <label>Password:</label><br>
+    <input type="password" name="password" required><br><br>
+
+    <!-- existing email + password fields -->
+    <input type="password" name="confirm_password" placeholder="Confirm Password" required><br><br>
+    <button type="submit" class="sumbit-btn">
+        <i class="fa-solid fa-clipboard-check"></i> Register</button><br><br>
+    <a href="/" style="text-decoration: none;">
+        <button type="button">⬅ Go Back</button>
+    </a>
+</form>
+{% endblock %}
